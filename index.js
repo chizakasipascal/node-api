@@ -1,6 +1,12 @@
 const expresse=require('express');
 const app=expresse();
 require ('./services/dbSerices')
-app.listen(5500 ,()=>{
-    console.log("Server stated to port 5500");
+
+
+const postsRoutes=require('./routes/postsController'); 
+app.use('/',postsRoutes);
+
+
+app.listen(2700 ,()=>{
+    console.log("Server stated to port 2700");
 });

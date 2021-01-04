@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 mongoose.connect(
-    "mongodb://localhost:2707/node-api",
+    "mongodb://127.0.0.1:27017/node-api",
     {useNewUrlParser : true,useUnifiedTopology:true},
     (err)=>{
         if (!err) {
