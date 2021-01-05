@@ -45,4 +45,19 @@ router.put("/:id", (req, res) => {
         });
 });
 
+
+//suppression de la donnee
+
+router.delete("/:id",(req,res)=>{
+    if (!ObjectID.isValid(req.params.id)) 
+        return res.status(400).send("Error Id unknows "+req.params.id);
+
+    PostsModels.findByIdAndRemove(
+        req.params.id,
+        (err,docs)=>{
+            if (!err)res.send(docs);
+            else console.log("Les f chier n'exist pas veiller " +err);
+    });
+    
+});
 module.exports = router;
